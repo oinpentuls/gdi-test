@@ -88,7 +88,11 @@ export default {
       let slug = this.$router.history.current.params.slug;
 
       let property = axios
-        .get(`/api/${slug}`)
+        .get(`/api/${slug}`, {
+          headers: {
+            "X-Requested-With": "XMLHttpRequest",
+          },
+        })
         .then((response) => {
           this.property = response.data.data;
           console.log(response);

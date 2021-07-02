@@ -72,11 +72,11 @@
               </agile>
             </div>
             <div class="col-md-9 relative">
-              <h5>{{item.title}}</h5>
-              <p>Rp {{item.price}}</p>
+              <h5>{{ item.title }}</h5>
+              <p>Rp {{ item.price }}</p>
               <div class="clearfix">
                 <p class="absolute bottom">
-                  {{item.address}}
+                  {{ item.address }}
                 </p>
 
                 <span class="absolute bottom float-right"
@@ -135,7 +135,11 @@ export default {
     },
     getProperties() {
       let properties = axios
-        .get("/api/")
+        .get("/api/", {
+          headers: {
+            "X-Requested-With": "XMLHttpRequest",
+          },
+        })
         .then((response) => {
           this.properties = response.data.data;
         })
