@@ -88,7 +88,7 @@ export default {
       let slug = this.$router.history.current.params.slug;
 
       let property = axios
-        .get(`/api/${slug}`, {
+        .get(`https://gdi-test.herokuapp.com/api/${slug}`, {
           headers: {
             "X-Requested-With": "XMLHttpRequest",
           },

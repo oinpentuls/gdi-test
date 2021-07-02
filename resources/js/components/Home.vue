@@ -135,7 +135,7 @@ export default {
     },
     getProperties() {
       let properties = axios
-        .get("/api/", {
+        .get("https://gdi-test.herokuapp.com/api/", {
           headers: {
             "X-Requested-With": "XMLHttpRequest",
           },
